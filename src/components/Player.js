@@ -48,15 +48,20 @@ const Player =({currentSong, isPlaying,setIsPlaying})=>{
         <div className="player">
             <div className="time-control">
                 <p>{getTime(songInfo.currentTime)}</p>
-                <input type="range"/>
-                <p>End Time</p>
+                <input 
+                min ={0} 
+                max={songInfo.duration} 
+                value={songInfo.currentTime} 
+                type="range"/>
+                <p>{getTime(songInfo.duration)}</p>
             </div>
             <div className="play-control">
                 <FontAwesomeIcon className="skip-back" size ="2x" icon={faAngleLeft}/>
                 <FontAwesomeIcon onClick={playSongsHandler} className="play" size ="2x" icon={faPlay}/>
                 <FontAwesomeIcon className="skip-forward" size="2x" icon={faAngleRight}/>
             </div>
-            <audio onTimeUpdate={timeUpdateHandler}ref={audioRef}src={currentSong.audio}></audio>
+            <audio onTimeUpdate={timeUpdateHandler} onLoadedMetadata={timeUpdateHandler}
+            ref={audioRef}src={currentSong.audio}></audio>
                 
         </div>
 
