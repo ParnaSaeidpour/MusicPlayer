@@ -18,7 +18,12 @@ const Player =({currentSong, isPlaying,setIsPlaying})=>{
         
 
     }
-        
+        const timeUpdateHandler =(e)=>{
+            const current = e.target.currentTime;
+            const duration =e.target.duration
+            setSongInfo({...songInfo,currentTime:current, duration:duration})
+
+        }
 
 
         const [songInfo, setSongInfo] =useState({
@@ -45,7 +50,7 @@ const Player =({currentSong, isPlaying,setIsPlaying})=>{
                 <FontAwesomeIcon onClick={playSongsHandler} className="play" size ="2x" icon={faPlay}/>
                 <FontAwesomeIcon className="skip-forward" size="2x" icon={faAngleRight}/>
             </div>
-            <audio ref={audioRef}src={currentSong.audio}></audio>
+            <audio onTimeUpdate={timeUpdateHandler}ref={audioRef}src={currentSong.audio}></audio>
                 
         </div>
 
