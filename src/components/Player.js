@@ -25,6 +25,12 @@ const Player =({currentSong, isPlaying,setIsPlaying})=>{
 
         }
 
+        const getTime =(time)=>{
+            return(
+                Math.floor(time / 60) + ":" + ("0" + Math.floor(time % 60)).slice(-2)
+            )
+        }
+
 
         const [songInfo, setSongInfo] =useState({
             currentTime: null,
@@ -41,7 +47,7 @@ const Player =({currentSong, isPlaying,setIsPlaying})=>{
     return(
         <div className="player">
             <div className="time-control">
-                <p>Start Time</p>
+                <p>{getTime(songInfo.currentTime)}</p>
                 <input type="range"/>
                 <p>End Time</p>
             </div>
