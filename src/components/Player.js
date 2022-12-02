@@ -10,8 +10,10 @@ const Player =({currentSong, isPlaying,setIsPlaying})=>{
     const playSongsHandler =()=>{
         if(isPlaying){
             audioRef.current.pause();
+            setIsPlaying(!isPlaying)
         }else{
             audioRef.current.play();
+            setIsPlaying(!isPlaying);
         }
         
 
