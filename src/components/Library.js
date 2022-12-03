@@ -7,7 +7,11 @@ const Library =({songs,setCurrentSong})=>{
             <h2>Library</h2>
             <div className="Library-songs">
                 {songs.map((song)=>(
-                    <LibrarySong setCurrentSong={setCurrentSong} song={song} />
+                    <LibrarySong setCurrentSong={setCurrentSong}
+                     song={song} songs={songs}
+                     id={song.id}
+                     key={song.id}
+                     />
                 ))}
 
                 
