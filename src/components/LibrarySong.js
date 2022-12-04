@@ -22,7 +22,7 @@ const LibrarySong =({song,songs,setCurrentSong,id,audioRef,isPlaying})=>{
 
 
     return(
-        <div onClick={songSelectHandler} className="Library-song">
+        <div onClick={songSelectHandler} className={`Library-song ${song.active ? 'selected' :""}`}>
             <img alt={song.name}src={song.cover}></img>
             <div className="song-description">
                 <h3>{song.name}</h3>
@@ -37,3 +37,4 @@ const LibrarySong =({song,songs,setCurrentSong,id,audioRef,isPlaying})=>{
 
 
 export default LibrarySong
+
