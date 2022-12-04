@@ -36,7 +36,8 @@ const timeUpdateHandler =(e)=>{
         songInfo={songInfo}
         />
       <Library audioRef={audioRef}songs={songs} setCurrentSong={setCurrentSong}
-      isPlaying={isPlaying}/>
+      isPlaying={isPlaying} setSongs={setSongs}
+      />
       <audio onTimeUpdate={timeUpdateHandler} onLoadedMetadata={timeUpdateHandler}
             ref={audioRef}src={currentSong.audio}></audio>
 
