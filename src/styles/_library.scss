@@ -29,7 +29,9 @@
     }
     &:hover{
         background: rgb(252, 225, 225);
-    }
+    };
+
+
 }
 
 .song-description{
@@ -68,7 +70,9 @@
         border: transparent;
         } */
 
-
+.selected{
+    background: violet;
+}
 
 
         
