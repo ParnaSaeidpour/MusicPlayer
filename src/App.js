@@ -4,6 +4,7 @@ import Song from './components/Song'
 import "./styles/app.scss"
 import data from './util'
 import Library from "./components/Library"
+import Nav from "./components/Nav"
 
 function App() {
 
@@ -26,6 +27,7 @@ const timeUpdateHandler =(e)=>{
 }
   return (
     <div className="App">
+      <Nav />
       <Song currentSong={currentSong}/>
       <Player 
         audioRef ={audioRef}
@@ -40,6 +42,8 @@ const timeUpdateHandler =(e)=>{
       />
       <audio onTimeUpdate={timeUpdateHandler} onLoadedMetadata={timeUpdateHandler}
             ref={audioRef}src={currentSong.audio}></audio>
+
+      
 
     </div>
   );
