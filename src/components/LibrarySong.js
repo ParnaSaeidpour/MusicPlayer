@@ -8,7 +8,7 @@ const LibrarySong =({song,songs,setCurrentSong,id,audioRef,isPlaying,setSongs})=
         setCurrentSong(selectedSong[0])
 
         const newSongs = songs.map((song)=>{
-            if(song.id== id){
+            if(song.id=== id){
                 return{
                     ...song,
                     active: true,
