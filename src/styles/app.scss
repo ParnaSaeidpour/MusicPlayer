@@ -23,3 +23,11 @@ h3,h4{
     font-weight: 400;
     color: rgb(110, 107, 107);
 }
+
+.App{
+    transition: all 0.5s ease;
+}
+
+.library-active{
+    margin-left: 30%;
+}
