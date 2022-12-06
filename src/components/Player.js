@@ -21,12 +21,9 @@ const Player =({currentSong, isPlaying,setIsPlaying,audioRef,setSongInfo,songInf
             }
         }
         )
-
         setSongs(newSongs);
 
-
-
-    },[currentSong])
+    })
 
     const playSongsHandler =()=>{
         if(isPlaying){

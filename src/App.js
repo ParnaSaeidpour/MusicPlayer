@@ -25,10 +25,15 @@ const timeUpdateHandler =(e)=>{
   setSongInfo({...songInfo,currentTime:current, duration:duration})
 
 }
-const songEndHandler=async()=>{
+const songEndHandler= async ()=>{
   let currentIndex =songs.findIndex((song)=> song.id ===currentSong.id);
   await setCurrentSong(songs[(currentIndex+1) % songs.length]); 
-  if(isPlaying) audioRef.current.play();         
+  if(isPlaying){
+    setTimeout(()=>{
+      audioRef.current.play()
+
+    },100)
+  } ;         
 }
   return (
     <div className="App">
